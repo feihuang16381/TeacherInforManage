@@ -11,22 +11,14 @@
    
     <link rel="stylesheet" type="text/css" href="css/animate.css"/>
 </head>
-<%-- <body>
-<%=request.getAttribute("name") %>
-<%=request.getAttribute("age") %>
-  <form action="LoginServlet">
-  <input  type="text" name="username"/></br>
-  <input type="password" name="password"/></br>
-  <button  type="submit"> 登陆</button>
-  </form>
-</body> --%>
+
 <body>
         <div class="center-in-center">
        
 <div class="container">
 
-    <form class="form-horizontal" id="loginForm" action="LoginServlet">
-     <%=request.getAttribute("List<Map>:") %>
+    <form class="form-horizontal" id="loginForm" action="Login">
+
         <h3  class="animated infinite slideInDown">欢迎来到学生信息管理系统！！！</h3>
         <div class="form-group">
             <div class="col-xs-offset-2 col-xs-8">

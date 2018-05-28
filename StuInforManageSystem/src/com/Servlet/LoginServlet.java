@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.dao.StudentDao;
 import com.util.DBUtil;
 
 /**
@@ -36,38 +37,27 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		request.setAttribute("name", "黄飞");
+	
 
-		request.setAttribute("age", 18);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 		String userName = request.getParameter("username");
 		String passWd = request.getParameter("password");
-		if(userName!=null&&passWd!=null) {
-		String sql = "select  * from login  where  username = " + "'" + userName + "'";
-		
-		try {
-			List<Map<String, Object>> list = DBUtil.executeQueryFromLogin(sql);
-			request.setAttribute("List<Map>:", list);
-			if (list.get(0).get("username") != null && list.get(0).get("password") != null) {
-				System.out.println(list.get(0).get("username"));
-				System.out.println(list.get(0).get("password"));
-				if (list.get(0).get("username").equals(userName) && list.get(0).get("password").equals(passWd)) {
-					HttpSession session = request.getSession();
-					session.setAttribute("userName", userName);
-					System.out.println("success");
-					System.out.println(list.get(0).get("username"));
-					System.out.println(list.get(0).get("password"));
-				} else {
-					System.out.println("failed");
-					System.out.println("userName" + userName);
-				}
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		}
 
+		StudentDao studentdao = new StudentDao();
+		List<Map<String, Object>> list = studentdao.GetInfor(userName);
+		request.setAttribute("List<Map>:", list);
+
+		System.out.println(list);
+		if (list.get(0).get("username").equals(userName) && list.get(0).get("password").equals(passWd)) {
+			HttpSession session = request.getSession();
+			session.setAttribute("userName", userName);
+			System.out.println("success");
+			response.sendRedirect("GetInfor");
+
+		} else {
+			System.out.println("failed");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+
+		}
 	}
 
 	/**

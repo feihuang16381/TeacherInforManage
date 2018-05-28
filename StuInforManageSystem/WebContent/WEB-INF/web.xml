@@ -25,12 +25,12 @@
     <servlet-name>GetInforServlet</servlet-name>
     <url-pattern>/GetInfor</url-pattern>
   </servlet-mapping>
-  <filter>
+  <!-- <filter>
     <filter-name>filterTest</filter-name>
     <filter-class>com.util.FilterTest</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>filterTest</filter-name>
     <url-pattern>/GetInfor/*</url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
 </web-app>
