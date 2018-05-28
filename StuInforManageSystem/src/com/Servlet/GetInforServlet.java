@@ -51,7 +51,6 @@ public class GetInforServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("list111"+list.get(0));
 			request.setAttribute("list", list);
 			
 			

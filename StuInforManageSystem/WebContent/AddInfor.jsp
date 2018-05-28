@@ -12,46 +12,42 @@
 </head>
 <body>
  <form class="form-horizontal" id="loginForm" action="LoginServlet">
-     <%=request.getAttribute("List<Map>:") %>
+  
         <h3  class="animated infinite slideInDown">欢迎来到学生信息管理系统！！！</h3>
-      <div class="form-group">
-            <div class="col-xs-offset-2 col-xs-8">
-                <input type="text" class="form-control" id="NameText" name="username" placeholder="userID" />
-       </div>
-        </div>
+    
         <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="姓名">
+                <input type="text" class="form-control" id="inputPassword" name="userId" placeholder="userId">
             </div>
         </div>
         <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="姓名">
+                <input type="text" class="form-control" id="inputPassword" name="name" placeholder="姓名">
             </div>
         </div>
         <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="收入">
+                <input type="text" class="form-control" id="inputPassword" name="salary" placeholder="收入">
             </div>
         </div>
         <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="性别">
+                <input type="text" class="form-control" id="inputPassword" name="sex" placeholder="性别">
             </div>
         </div>
        <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="所在系">
+                <input type="text" class="form-control" id="inputPassword" name="sdept" placeholder="所在系">
             </div>
         </div>
        <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="专业">
+                <input type="text" class="form-control" id="inputPassword" name="major" placeholder="专业">
             </div>
         </div>
            <div class="form-group">
             <div class=" col-xs-offset-2 col-xs-8">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="教师生日">
+                <input type="text" class="form-control" id="inputPassword" name="birthday" placeholder="教师生日">
             </div>
         </div>
       

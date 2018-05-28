@@ -36,7 +36,7 @@ public class DBUtil {
 		Connection connection  = getConnection();
 		Statement statement = connection.createStatement();
 		rs=statement.executeQuery(sql);
-		System.out.println(sql);
+	
 		List<Map<String, Object>> list =new LinkedList<Map<String, Object>>();  
 		if(rs != null) {
 			while(rs.next()) {

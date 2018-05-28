@@ -20,7 +20,7 @@
 		List<Map<String, Object>> list = (List<Map<String, Object>>) request.getAttribute("list");
 	%>
 
-
+<a href="AddInfor.jsp" class="btn btn-info" role="button">新增</a>
 
 	<table class="table table-hover">
 		<tr>
@@ -44,6 +44,8 @@
 			<td><%=list.get(i).get("sdept")%></td>
 			<td><%=list.get(i).get("major")%></td>
 			<td><%=list.get(i).get("birthday")%></td>
+			<td> <a href="editTeacher?name=<%=list.get(i).get("userId") %>" class="btn btn-info" role="button">修改</a> 
+			     <a href="editTeacher?name=<%=list.get(i).get("userId") %>" class="btn btn-info" role="button">删除</a></td>
 		</tr>
 
 		<%

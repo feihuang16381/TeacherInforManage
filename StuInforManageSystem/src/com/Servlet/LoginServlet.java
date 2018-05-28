@@ -46,18 +46,24 @@ public class LoginServlet extends HttpServlet {
 		List<Map<String, Object>> list = studentdao.GetInfor(userName);
 		request.setAttribute("List<Map>:", list);
 
-		System.out.println(list);
+		if(!" ".equals(userName)&&!" ".equals(passWd)) {
 		if (list.get(0).get("username").equals(userName) && list.get(0).get("password").equals(passWd)) {
 			HttpSession session = request.getSession();
-			session.setAttribute("userName", userName);
-			System.out.println("success");
+			session.setAttribute("userName", userName);	
+			System.out.println("login success");
 			response.sendRedirect("GetInfor");
+			
 
 		} else {
 			System.out.println("failed");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			response.sendRedirect("index.jsp");
 
 		}
+		}
+		
+		else 
+			response.sendRedirect("index.jsp");
+			
 	}
 
 	/**

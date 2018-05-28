@@ -27,7 +27,18 @@ public class AddInforServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	
+        String userId =  request.getParameter("userId");
+        String name = (String) request.getParameter("name");
+        String salary = (String) request.getParameter("salary");
+        String sex = (String) request.getParameter("sex");
+        String sdept = (String) request.getParameter("sdept");
+        String major = (String) request.getParameter("major");
+        String birthday = (String) request.getParameter("birthday");
+        
+        
+        System.out.println(userId+name+salary+sex);
+        
+        
 	}
 
 	/**
