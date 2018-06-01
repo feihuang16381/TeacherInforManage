@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css"/>
 </head>
 <body>
- <form class="form-horizontal" id="loginForm" action="LoginServlet">
+ <form class="form-horizontal" id="loginForm" action="AddInforServlet">
   
         <h3  class="animated infinite slideInDown">欢迎来到学生信息管理系统！！！</h3>
     
@@ -54,7 +54,7 @@
 </div>
 <div class="form-group">
     <div class="col-xs-offset-2 col-xs-4" id="a222">
-        <button type="submit" class="btn btn-default" id="loginButton">修改</button>
+        <button type="submit" class="btn btn-default" id="loginButton">添加</button>
     </div>
     <div class="col-xs-offset-1 col-xs-4" id="a111">
         <button type="reset" class="btn btn-default" id="registerButton" >重置</button>

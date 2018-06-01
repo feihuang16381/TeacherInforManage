@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet {
 		StudentDao studentdao = new StudentDao();
 		List<Map<String, Object>> list = studentdao.GetInfor(userName);
 		request.setAttribute("List<Map>:", list);
+	
 
 		if(!" ".equals(userName)&&!" ".equals(passWd)) {
 		if (list.get(0).get("username").equals(userName) && list.get(0).get("password").equals(passWd)) {

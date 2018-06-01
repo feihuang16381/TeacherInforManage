@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.StudentDao;
+import com.entity.Teacher;
+
 /**
  * Servlet implementation class AddInforServlet
  */
@@ -27,18 +30,31 @@ public class AddInforServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-        String userId =  request.getParameter("userId");
-        String name = (String) request.getParameter("name");
-        String salary = (String) request.getParameter("salary");
-        String sex = (String) request.getParameter("sex");
-        String sdept = (String) request.getParameter("sdept");
-        String major = (String) request.getParameter("major");
-        String birthday = (String) request.getParameter("birthday");
+     
+        String name =  request.getParameter("name");    
+        String sex =  request.getParameter("sex");
+        String sdept =  request.getParameter("sdept");
+        String major =  request.getParameter("major");
+        String birthday =  request.getParameter("birthday");
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        float salary =  Float.parseFloat(request.getParameter("salary"));
         
         
-        System.out.println(userId+name+salary+sex);
+        Teacher teacher = new Teacher();
+        teacher.setId((Integer)userId);
+        teacher.setName(name);
+        teacher.setSalary(salary);
+        teacher.setSex(sex);
+        teacher.setSdept(sdept);
+        teacher.setMajor(major);
+        teacher.setBirthday(birthday);
+        	
         
+        StudentDao studentDao = new StudentDao();
+        studentDao.AddTeacher(teacher);
         
+        System.out.println("添加成功");
+        request.getRequestDispatcher("AddInfor.jsp").forward(request, response);
 	}
 
 	/**

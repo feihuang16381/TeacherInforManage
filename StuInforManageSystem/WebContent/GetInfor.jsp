@@ -1,3 +1,4 @@
+<%@page import="com.Servlet.GetInforServlet"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.util.List, java.util.Map"%>
 
@@ -18,11 +19,13 @@
 
 	<%
 		List<Map<String, Object>> list = (List<Map<String, Object>>) request.getAttribute("list");
+	 session.setAttribute("condition", request.getParameter("userId")); 
+	 System.out.println("GetInfor.jsp:"+session.getAttribute("condition"));
 	%>
 
 <a href="AddInfor.jsp" class="btn btn-info" role="button">新增</a>
 
-	<table class="table table-hover">
+	<table class="table table-hover" action="DeleteInfor">
 		<tr>
 			<th>用户Id</th>
 			<th>姓名</th>
@@ -44,8 +47,9 @@
 			<td><%=list.get(i).get("sdept")%></td>
 			<td><%=list.get(i).get("major")%></td>
 			<td><%=list.get(i).get("birthday")%></td>
-			<td> <a href="editTeacher?name=<%=list.get(i).get("userId") %>" class="btn btn-info" role="button">修改</a> 
-			     <a href="editTeacher?name=<%=list.get(i).get("userId") %>" class="btn btn-info" role="button">删除</a></td>
+			<td> <a href="editTeacher.jsp?condition=<%=list.get(i).get("userId") %>" class="btn btn-info" role="button">修改</a> 
+			     <a href="DeleteTeacher.jsp?condition=<%=list.get(i).get("userId") %>" class="btn btn-info" role="button" type="submit" action="DeleteInfor" style="color: red;">删除</a></td>
+			  <%--    <% request%> --%>
 		</tr>
 
 		<%

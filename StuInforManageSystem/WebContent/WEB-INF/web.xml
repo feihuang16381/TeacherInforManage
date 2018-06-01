@@ -25,12 +25,45 @@
     <servlet-name>GetInforServlet</servlet-name>
     <url-pattern>/GetInfor</url-pattern>
   </servlet-mapping>
-  <!-- <filter>
-    <filter-name>filterTest</filter-name>
+  <servlet>
+    <servlet-name>AddTeacherServlet</servlet-name>
+    <servlet-class>com.Servlet.AddInforServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddTeacherServlet</servlet-name>
+    <url-pattern>/AddTeacherServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>editTeacher</servlet-name>
+    <servlet-class>com.Servlet.editTeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editTeacher</servlet-name>
+    <url-pattern>/editTeacher</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <servlet-name>DeleteInfor</servlet-name>
+    <servlet-class>com.Servlet.DeleteTeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteInfor</servlet-name>
+    <url-pattern>/DeleteInfor</url-pattern>
+  </servlet-mapping> 
+  <filter>
+    <filter-name>FiltertTest</filter-name>
     <filter-class>com.util.FilterTest</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>filterTest</filter-name>
-    <url-pattern>/GetInfor/*</url-pattern>
-  </filter-mapping> -->
+</filter>
+ 
+<filter-mapping>
+    <filter-name>FiltertTest</filter-name>
+    <url-pattern>/GetInfor</url-pattern>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>FiltertTest</filter-name>
+    <url-pattern>/AddInfor.jsp</url-pattern>
+</filter-mapping>
+<session-config>   <!--分钟为单位-->
+    <session-timeout>0</session-timeout>
+</session-config>
+
 </web-app>
